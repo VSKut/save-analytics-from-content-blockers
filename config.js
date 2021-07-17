@@ -2,7 +2,7 @@ const MATCH_EVERYTHING_STRING = '.*';
 const env = process.env.APP__ENV_NAME || "local";
 const isLocal = env === "local" || env === "test";
 const proxyDomain = process.env.APP__PROXY_DOMAIN || '';
-const strippedPath = process.env.APP__STRIPPED_PATH || '/api/';
+const strippedPath = process.env.APP__STRIPPED_PATH || '';
 const hostsWhitelistRegex = (() => {
     try {
         return new RegExp(process.env.APP__HOSTS_WHITELIST_REGEX || MATCH_EVERYTHING_STRING);
