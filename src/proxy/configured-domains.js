@@ -11,7 +11,7 @@ const proxies = new Map(Array.from(domains).map((domain) => {
 }));
 
 export function enableDefaultProxy (expressApp) {
-    expressApp.use("/", (req, res, next) => {
+    expressApp.use("/api/", (req, res, next) => {
         if (!req.headers || !req.headers.host || !config.hostsWhitelistRegex.test(req.headers.host)) {
             info(`FORBIDDEN: proxy request from host "${req.headers.host}" was canceled as it doesn't match with ${config.hostsWhitelistRegex}.`);
             return res.status(403).send({
