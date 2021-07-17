@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ZitRos/save-analytics-from-content-blockers#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "esm": "^3.2.7",
     "express": "^4.16.4",
     "express-http-proxy": "^1.5.1"

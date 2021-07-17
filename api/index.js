@@ -1,10 +1,12 @@
 import express from "express";
 import config from "../config";
+const cors = require('cors')
 import { info, error } from "../src/logger";
 import { enableDefaultProxy } from "../src/proxy/configured-domains";
 
 let app = express();
 app.disable("x-powered-by");
+app.use(cors());
 
 app.use("/robots.txt", (_, res) => res.status(200).set("Content-Type", "text/plain").send(
     'User-agent: *\nDisallow: /'
