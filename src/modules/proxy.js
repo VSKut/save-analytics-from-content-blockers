@@ -26,6 +26,7 @@ const replaceDomainsForHost = (host) => (match, pos, str) => {
 };
 
 export function createDefaultProxy (targetDomain, proxyOptionsOverride = {}) {
+    console.log(targetDomain);
     let servername = targetDomain.replace(/^https?\:\/\//, "");
     return proxy(targetDomain, {
         proxyReqOptDecorator: (proxyRequest, originalRequest) => {

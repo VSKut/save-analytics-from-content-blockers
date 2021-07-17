@@ -2,7 +2,7 @@ const MATCH_EVERYTHING_STRING = '.*';
 const env = process.env.APP__ENV_NAME || "local";
 const isLocal = env === "local" || env === "test";
 const proxyDomain = process.env.APP__PROXY_DOMAIN || '';
-const strippedPath = process.env.APP__STRIPPED_PATH || '';
+const strippedPath = process.env.APP__STRIPPED_PATH || '/api/';
 const hostsWhitelistRegex = (() => {
     try {
         return new RegExp(process.env.APP__HOSTS_WHITELIST_REGEX || MATCH_EVERYTHING_STRING);
@@ -26,6 +26,7 @@ export default {
     proxyDomain,        // Domain to proxy calls through. Leave it empty to use the requested domain as a proxy domain
     proxy: {            // Proxy configuration is here
         domains: [      // These domains are replaced in any proxied response (including scripts, URLs and redirects)
+            "adservice.google.com",
             "adservice.google.com",
             "www.google-analytics.com",
             "analytics.google.com",
