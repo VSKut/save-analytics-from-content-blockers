@@ -25,7 +25,6 @@ export async function init () {
     }
 
     try {
-
         app = express();
         app.disable("x-powered-by");
         app.use("/robots.txt", (_, res) => res.status(200).set("Content-Type", "text/plain").send(
