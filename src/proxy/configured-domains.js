@@ -24,7 +24,7 @@ export function enableDefaultProxy (expressApp) {
             : req.url === "/"
                 ? next()
                 : res.status(404).send({
-                    error: `Proxy error: domain "${domain}" is not proxied. Requested URL: ${req.url}`
+                    error: `Page doesn't exists`
                 });
     });
 }
