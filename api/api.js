@@ -27,6 +27,11 @@ export async function init () {
     try {
         app = express();
         app.disable("x-powered-by");
+
+        app.get('/test', (req, res) => {
+            res.send('It works!')
+        })
+
         app.use("/robots.txt", (_, res) => res.status(200).set("Content-Type", "text/plain").send(
             'User-agent: *\nDisallow: /'
         ));
